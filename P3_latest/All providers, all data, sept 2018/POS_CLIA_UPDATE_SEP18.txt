@@ -1,0 +1,5 @@
+"Comparison of CLIA output file for JUN18 with CLIA output file for SEP18."
+
+
+OLD START,OLD NAME,OLD FORMAT,NOTES,NEW START,NEW NAME,NEW FORMAT
+There are no differences between the two layouts.

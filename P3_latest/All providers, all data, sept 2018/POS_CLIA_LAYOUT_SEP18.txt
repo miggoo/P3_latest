@@ -1,0 +1,2169 @@
+       *********************************************
+       *                                           *
+       *           A T T E N T I O N               *
+       *                                           *
+       *   THESE POS RECORD SPECIFICATIONS WERE    *
+       *   PRODUCED FROM OUR DICTIONARY AT THE     *
+       *   SAME TIME AS THE POS DATA FILE THAT     *
+       *   YOU REQUESTED. YOU MAY WISH TO CHECK    *
+       *   THESE SPECIFICATIONS TO SEE IF ANY      *
+       *   CHANGES HAVE OCCURED SINCE YOUR RECEIPT *
+       *   OF ANY PRIOR DOCUMENTATION.             *
+       *                                           *
+       *   FILE CREATION DATE = 10/01/2018         *
+       *                                           *
+       *********************************************
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 1
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 2
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+   Provider Category Subtype Code                    2    1     2    VARCHAR2
+     Description: Identifies the subtype of the provider, within the
+                  primary category.  Used in reporting to show the
+                  breakdown of provider categories, mainly for hospitals
+                  and SNFs.
+     SAS Name:    PRVDR_CTGRY_SBTYP_CD
+     COBOL Name:  PRVDR-CTGRY-SBTYP-CD
+     VALUES:      01=CLIA88 Laboratory
+
+   Provider Category Code                            2    3     4    VARCHAR2
+     Description: Identifies the type of provider participating in the
+                  Medicare/Medicaid program.
+     SAS Name:    PRVDR_CTGRY_CD
+     COBOL Name:  PRVDR-CTGRY-CD
+     VALUES:      22=CLIA Laboratory
+
+   CHOW Count                                        2    5     6    NUMBER
+     Description: Number of times this provider has undergone a change of
+                  ownership.
+     SAS Name:    CHOW_CNT
+     COBOL Name:  CHOW-CNT
+
+   CHOW Date                                         8    7     14   DATE
+     Description: Effective date of the most recent change of ownership for
+                  this provider.
+     SAS Name:    CHOW_DT
+     COBOL Name:  CHOW-DT
+
+   Address: City                                     28   15    42   VARCHAR2
+     Description: City in which the provider is physically located.
+     SAS Name:    CITY_NAME
+     COBOL Name:  CITY-NAME
+
+   Compliance: Acceptable POC                        1    43    43   VARCHAR2
+     Description: Indicates if a provider is in compliance with program
+                  requirements based on an acceptable plan for correction
+                  of deficiencies.
+     SAS Name:    ACPTBL_POC_SW
+     COBOL Name:  ACPTBL-POC-SW
+
+   Compliance: Status                                1    44    44   VARCHAR2
+     Description: Compliance status of a provider at the time of
+                  certification survey.
+     SAS Name:    CMPLNC_STUS_CD
+     COBOL Name:  CMPLNC-STUS-CD
+     VALUES:      A=IN COMPLIANCE
+                  B=NOT IN COMPLIANCE
+
+   SSA County Code                                   3    45    47   VARCHAR2
+     Description: Social Security Administration geographic code indicating
+                  the county where the provider is located.
+     SAS Name:    SSA_CNTY_CD
+     COBOL Name:  SSA-CNTY-CD
+
+   Cross Ref Provider Number                         10   48    57   CHAR
+     Description: Cross reference provider number
+     SAS Name:    CROSS_REF_PROVIDER_NUMBER
+     COBOL Name:  CROSS-REF-PROVIDER-NUMBER
+
+   Certification Date                                8    58    65   DATE
+     Description: Equal to the exit date of the initial visit of the Health
+                  survey for certifications completed after July 28, 2012.
+                  For certifications prior to that date, the certification
+                  date is equal to the exit date of the initial visit of
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 3
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+                  the Health survey or LSC survey, whichever is later.
+     SAS Name:    CRTFCTN_DT
+     COBOL Name:  CRTFCTN-DT
+
+   Eligibility Indicator                             1    66    66   VARCHAR2
+     Description: Indicates if a facility is eligible to participate in the
+                  Medicare and/or Medicaid programs.
+     SAS Name:    ELGBLTY_SW
+     COBOL Name:  ELGBLTY-SW
+
+   Facility Name                                     50   67    116  VARCHAR2
+     Description: Name of the provider certified to participate in the
+                  Medicare and/or Medicaid programs.
+     SAS Name:    FAC_NAME
+     COBOL Name:  FAC-NAME
+
+   Medicare Administrative Contractor (MAC) or       5    117   121  VARCHAR2
+   Intermediary or Carrier Code
+     Description: Number assigned to the Medicare Administrative
+                  Contractor, intermediary or carrier servicing this
+                  provider.
+     SAS Name:    INTRMDRY_CARR_CD
+     COBOL Name:  INTRMDRY-CARR-CD
+     VALUES:      00000=DUMMY FOR MEDICAID HHA
+                  00010=BLUE CROSS (ALABAMA)
+                  00011=CAHABA
+                  00020=BLUE CROSS (ARKANSAS)
+                  00040=BLUE CROSS (CALIFORNIA)
+                  00060=BLUE CROSS (CONNECTICUT)
+                  00070=BLUE CROSS (DELAWARE)
+                  00090=BLUE CROSS (FLORIDA)
+                  00101=BLUE CROSS (GEORGIA)
+                  00121=HEALTH CARE SERVICE CORPORATION
+                  00122=HCSC - MICHIGAN
+                  00123=HCSC OF MICHIGAN
+                  00130=NATIONAL GOVERNMENT SERVICES
+                  00131=NATIONAL GOVERNMENT SERVICES
+                  00140=BLUE CROSS (IOWA/SOUTH DAKOTA)
+                  00150=BLUE CROSS (KANSAS)
+                  00160=NATIONAL GOVERNMENT SERVICES
+                  00180=NATIONAL GOVERNMENT SERVICES
+                  00181=NATIONAL GOVERNMENT SERVICES
+                  00190=BLUE CROSS (MARYLAND)
+                  00200=BLUE CROSS (MASSACHUSETTS)
+                  00210=BLUE CROSS (MICHIGAN)
+                  00220=BLUE CROSS (MINNESOTA)
+                  00230=BLUE CROSS (MISSISSIPPI)
+                  00231=BLUE CROSS (LOUISIANA)
+                  00233=PINNACLE
+                  00241=BLUE CROSS (MISSOURI)
+                  00260=BLUE CROSS (NEBRASKA)
+                  00270=NATIONAL GOVERNMENT SERVICES
+                  00280=BLUE CROSS (NEW JERSEY)
+                  00290=BLUE CROSS (NEW MEXICO)
+                  00308=NATIONAL GOVERNMENT SERVICES
+                  00310=BLUE CROSS (NORTH CAROLINA)
+                  00320=NORIDIAN PART A
+                  00322=NORIDIAN PART A (AK/WA)
+                  00323=NORIDIAN PART A (ID/OR)
+                  00325=NORIDIAN
+                  00332=NATIONAL GOVERNMENT SERVICES
+                  00340=BLUE CROSS (OKLAHOMA)
+                  00350=BLUE CROSS (OREGON)
+                  00351=BLUE CROSS (OREGON) (IDAHO CLAIMS)
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 4
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+                  00362=BLUE CROSS (INDEPENDENCE)
+                  00363=BLUE CROSS (WESTERN PENNSYLVANIA)
+                  00366=HIGHMARK MEDICARE SERVICES
+                  00370=BLUE CROSS (RHODE ISLAND)
+                  00380=BLUE CROSS (SOUTH CAROLINA)
+                  00390=BLUE CROSS (TENNESSEE)
+                  00400=BLUE CROSS (TEXAS)
+                  00410=BLUE CROSS (UTAH)
+                  00423=BLUE CROSS (VIRGINIA/WEST VA)
+                  00430=BLUE CROSS (WASHINGTON & ALASKA)
+                  00450=NATIONAL GOVERNMENT SERVICES
+                  00452=NATIONAL GOVERNMENT SERVICES
+                  00453=NATIONAL GOVERNMENT SERVICES
+                  00454=NATIONAL GOVERNMENT SERVICES
+                  00456=NATIONAL GOVERNMENT SERVICES
+                  00468=BLUE CROSS (NORTH CAROLINA FOR PR)
+                  00510=BLUE SHIELD (ALABAMA)
+                  00511=CAHABA
+                  00512=CAHABA
+                  00520=BLUE SHIELD (ARKANSAS)
+                  00528=BLUE SHIELD (ARKANSAS/LOUISIANA)
+                  00542=BLUE SHIELD (CALIFORNIA)
+                  00550=BLUE SHIELD (COLORADO)
+                  00570=BLUE SHIELD (DELAWARE)
+                  00580=BLUE SHIELD (DISTRICT OF COLUMBIA)
+                  00590=BLUE SHIELD (FLORIDA)
+                  00621=BLUE SHIELD (ILLINOIS)
+                  00630=NATIONAL GOVERNMENT SERVICES
+                  00640=BLUE SHIELD (IOWA)
+                  00650=BLUE SHIELD (KANSAS)
+                  00655=BLUE SHIELD (KANSAS/NEBRASKA)
+                  00660=NATIONAL GOVERNMENT SERVICES
+                  00690=BLUE SHIELD (MARYLAND)
+                  00700=BLUE SHIELD (MASSACHUSETTS)
+                  00710=BLUE SHIELD (MICHIGAN)
+                  00720=BLUE SHIELD (MINNESOTA)
+                  00740=BLUE SHIELD (KANSAS CITY)
+                  00770=BLUE SHIELD (NEW HAMPSHIRE/VERMONT)
+                  00780=BLUE SHIELD (TRI-STATE)
+                  00801=BLUE SHIELD (BUFFALO)
+                  00803=NATIONAL GOVERNMENT SERVICES
+                  00805=NATIONAL GOVERNMENT SERVICES
+                  00821=NORIDIAN
+                  00824=NORIDIAN GVT SERVICES (CO)
+                  00826=NORIDIAN GVT SERVICES (IA)
+                  00831=NORIDIAN GVT SERVICES (AK)
+                  00832=NORIDIAN GVT SERVICES (AZ)
+                  00833=NORIDIAN GVT SERVICES (HI)
+                  00834=NORIDIAN GVT SERVICES (NV)
+                  00835=NORIDIAN GVT SERVICES (OR)
+                  00836=NORIDIAN GVT SERVICES (WA)
+                  00860=BLUE SHIELD (PENNSYLVANIA/NEW JERSEY)
+                  00865=BLUE SHIELD (PENNSYLVANIA)
+                  00870=BLUE SHIELD (RHODE ISLAND)
+                  00880=BLUE SHIELD (SOUTH CAROLINA)
+                  00883=PALMETTO GBA PART B
+                  00884=PALMETTO GBA
+                  00889=NORIDIAN GVT SERVICES (SD)
+                  00900=BLUE SHIELD (TEXAS)
+                  00901=TRAILBLAZERS HEALTH ENTERPRISES
+                  00904=TRAILBLAZER
+                  00910=BLUE SHIELD (UTAH)
+                  00930=BLUE SHIELD (WASHINGTON)
+                  00951=WISCONSIN PHYSICIANS SERVICE
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 5
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+                  00952=WPS - ILLINOIS
+                  00953=WPS - MICHIGAN
+                  00954=WI PHYSICIAN SERVICES - MN
+                  00973=BLUE SHIELD (PUERTO RICO)
+                  00974=BLUE SHIELD (VIRGIN ISLANDS)
+                  01010=AETNA (PEORIA)
+                  01020=AETNA (ALASKA)
+                  01030=AETNA (ARIZONA)
+                  01040=AETNA (GEORGIA)
+                  01101=PALMETTO (CALIFORNIA)
+                  01102=PALMETTO (CALIFORNIA (NORTH)
+                  01111=Noridian (CA)
+                  01112=Noridian (NF)
+                  01120=AETNA (HAWAII)
+                  01182=Noridian (SF)
+                  01192=PALMETTO (CALIFORNIA SOUTH)
+                  01201=PALMETTO (HAWAII)
+                  01202=PALMETTO (HAWAII)
+                  01211=Noridian (AS, GU, HI)
+                  01212=Noridian (AS, GU, HI)
+                  01290=AETNA (NEVADA)
+                  01301=PALMETTO (NEVADA)
+                  01302=PALMETTO (NEVADA)
+                  01311=Noridian (NV)
+                  01312=Noridian (NV)
+                  01360=AETNA (NEW MEXICO)
+                  01370=AETNA (OKLAHOMA)
+                  01380=AETNA (OREGON)
+                  01390=AETNA (WASHINGTON)
+                  01901=PALMETTO GBA
+                  01902=PALMETTO GBA
+                  01911=Noridian (AS, GU, HI, NV)
+                  02050=OCCIDENTAL (CALIFORNIA)
+                  02101=Noridian AK
+                  02102=Noridian AK
+                  02201=Noridian ID
+                  02202=Noridian ID
+                  02301=Noridian OR
+                  02302=Noridian OR
+                  02401=Noridian WA
+                  02402=Noridian WA
+                  03001=NORIDIAN ADMIN SERVICES
+                  03101=NORIDAN (ARIZONA)
+                  03102=NORIDAN (ARIZONA)
+                  03201=NORIDAN (MONTANA)
+                  03202=NORIDAN (MONTANA)
+                  03301=NORDIAN (NORTH DAKOTA)
+                  03302=NORDIAN (NORTH DAKOTA)
+                  03401=NORIDIAN (SOUTH DAKOTA)
+                  03402=NORIDIAN (SOUTH DAKOTA)
+                  03501=NORIDIAN (UTAH)
+                  03502=NORIDIAN (UTAH)
+                  03601=NORIDIAN (WYOMING)
+                  03602=NORIDIAN (WYOMING)
+                  04001=TRAILBLAZER
+                  04101=TRAILBLAZER (COLORADO)
+                  04102=TRAILBLAZER (COLORADO)
+                  04111=NOVITAS (COLORADO)
+                  04112=NOVITAS (COLORADO)
+                  04201=TRAILBLAZER (NEW MEXICO)
+                  04202=TRAILBLAZER (NEW MEXICO)
+                  04211=NOVITAS (NEW MEXICO)
+                  04212=NOVITAS (NEW MEXICO)
+                  04301=TRAILBLAZER (OKLAHOMA)
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 6
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+                  04302=TRAILBLAZER (OKLAHOMA)
+                  04311=NOVITAS (OKLAHOMA)
+                  04312=NOVITAS (OKLAHOMA)
+                  04401=TRAILBLAZER (TEXAS)
+                  04402=TRAILBLAZER (TEXAS)
+                  04411=NOVITAS (TEXAS)
+                  04412=NOVITAS (TEXAS)
+                  04901=MUTUAL LEGACY
+                  04911=NOVITAS
+                  05101=WPS (IOWA)
+                  05102=WPS (IOWA)
+                  05130=EQICOR (IDAHO)
+                  05201=WPS (KANSAS)
+                  05202=WPS (KANSAS)
+                  05301=WPS (MISSOURI)
+                  05302=WPS (MISSOURI WEST)
+                  05392=WPS (MISSOURI EAST)
+                  05401=WPS (NEBRASKA)
+                  05402=WPS (NEBRASKA)
+                  05440=EQICOR (TENNESSEE)
+                  05535=EQICOR (NORTH CAROLINA)
+                  05901=WISCONSIN PHYSICIANS SERVICE
+                  06001=NGS (WI)
+                  06004=National Govt Serv HHH
+                  06101=NGS (IL)
+                  06102=NGS (IL)
+                  06201=NGS (MN)
+                  06202=NGS (MN)
+                  06301=NGS (WI)
+                  06302=NGS (WI)
+                  07101=Novitas AR
+                  07102=Novitas AR
+                  07201=Novitas LA
+                  07202=Novitas LA
+                  07301=Novitas MS
+                  07302=Novitas MS
+                  08101=WPS IN
+                  08102=WPS IN
+                  08201=WPS MI
+                  08202=WPS MI
+                  09101=FIRST COAST (FLORIDA)
+                  09102=FIRST COAST (FLORIDA)
+                  09201=FIRST COAST (PUERTO RICO/VIRGIN ISLANDS)
+                  09202=FIRST COAST (PUERTO RICO)
+                  09302=FIRST COAST (VIRGIN ISLANDS)
+                  10071=TRAVELERS (RRB)
+                  10101=CAHABA GBA (AL)
+                  10102=CAHABA GBA (AL)
+                  10111=PALMETTO GBA (Part A) (AL)
+                  10201=CAHABA GBA (GA)
+                  10202=CAHABA GBA (GA)
+                  10211=PALMETTO GBA (GA)
+                  10230=TRAVELERS (CONNECTICUT)
+                  10240=TRAVELERS (MINNESOTA)
+                  10250=TRAVELERS (MISSISSIPPI)
+                  10301=CAHABA GBA (TN)
+                  10302=CAHABA GBA (TN)
+                  10311=PALMETTO GBA (TN)
+                  10490=TRAVELERS (VIRGINIA)
+                  10492=TRAVELERS - VIRGINIA SPECIAL PROJECT
+                  11004=PALMETTO HHH C
+                  11201=PALMETTO GBA (SC)
+                  11202=PALMETTO GBA (SC)
+                  11260=GENERAL AMERICAN
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 7
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+                  11301=PALMETTO GBA (VA)
+                  11302=PALMETTO GBA (VA)
+                  11401=PALMETTO GBA (WV)
+                  11402=PALMETTO GBA (WV)
+                  11501=PALMETTO GBA (NC)
+                  11502=PALMETTO GBA (NC)
+                  12101=Novitas DE
+                  12102=Novitas DE
+                  12201=Novitas DC
+                  12202=Novitas DC
+                  12301=Novitas MD
+                  12302=Novitas MD
+                  12401=Novitas NJ
+                  12402=Novitas NJ
+                  12501=Novitas PA
+                  12502=Novitas PA
+                  12901=Novitas Solutions DC, DE, MD, PA
+                  12902=HIGHMARK
+                  13101=NATIONAL GOVT SERVICES (CONNECTICUT)
+                  13102=NATIONAL GOVT SERVICES (CONNECTICUT)
+                  13201=NATIONAL GOVT SERVICES (NEW YORK)
+                  13202=NATIONAL GOVT SERVICES (NEW YORK - EMPIRE)
+                  13282=NGS (UN)
+                  13292=NGS (QN)
+                  14004=NATIONAL HERITAGE (HHA - A)
+                  14014=NGS (HHA)
+                  14101=NATIONAL HERITAGE (MAINE)
+                  14102=NATIONAL HERITAGE (MAINE)
+                  14111=NGS (ME)
+                  14112=NGS (ME)
+                  14201=NATIONAL HERITAGE (MASSACHUSETTS)
+                  14202=NATIONAL HERITAGE (MASSACHUSETTS)
+                  14211=NGS (MA)
+                  14212=NGS (MA)
+                  14301=NATIONAL HERITAGE (NEW HAMPSHIRE)
+                  14302=NATIONAL HERITAGE (NEW HAMPSHIRE)
+                  14311=NGS (NH)
+                  14312=NGS (NH)
+                  14330=GROUP HEALTH INC (NEW YORK)
+                  14401=NATIONAL HERITAGE (RHODE ISLAND)
+                  14402=NATIONAL HERITAGE (RHODE ISLAND)
+                  14411=NGS (RI)
+                  14412=NGS (RI)
+                  14501=NATIONAL HERITAGE (VERMONT)
+                  14502=NATIONAL HERITAGE (VERMONT)
+                  14511=NGS (VT)
+                  14512=NGS (VT)
+                  15004=CGS Administrators HHH
+                  15101=CGS (KENTUCKY)
+                  15102=CGS (KENTUCKY)
+                  15201=CGS (OHIO)
+                  15202=CGS (OHIO)
+                  16360=NATIONWIDE (OHIO)
+                  16510=NATIONWIDE (WEST VIRGINIA)
+                  17120=HAWAII MEDICAL SERVICE ASSOCIATION
+                  21200=MASSACHUSETTS/MAINE
+                  31142=NATIONAL HERITAGE INSURANCE CO (MAINE)
+                  31143=NATIONAL HERITAGE INSURANCE CO
+                  31144=NATIONAL HERITAGE INSURANCE CO
+                  50333=TRAVELERS (NEW YORK)
+                  51051=AETNA (PETALUMA)
+                  51070=AETNA (FARMINGTON)
+                  51100=AETNA (CLEARWATER)
+                  51140=AETNA (PEORIA)
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 8
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+                  51390=AETNA (FORT WASHINGTON)
+                  52280=WISCONSIN PHYSICIANS SERVICE
+                  57400=COOPERATIVA (PUERTO RICO)
+
+   Medicaid Vendor Number                            15   122   136  VARCHAR2
+     Description: Number which may be assigned to a provider by the state
+                  Medicaid agency for external control or billing purposes.
+     SAS Name:    MDCD_VNDR_NUM
+     COBOL Name:  MDCD-VNDR-NUM
+
+   Original Participation Date                       8    137   144  DATE
+     Description: Date a provider is first approved to provide Medicare
+                  and/or Medicaid services.
+     SAS Name:    ORGNL_PRTCPTN_DT
+     COBOL Name:  ORGNL-PRTCPTN-DT
+
+   Prior CHOW Date                                   8    145   152  DATE
+     Description: Effective date of the previous change of ownership for
+                  this provider.
+     SAS Name:    CHOW_PRIOR_DT
+     COBOL Name:  CHOW-PRIOR-DT
+
+   Prior Medicare Administrative Contractor (MAC) or 5    153   157  VARCHAR2
+   Intermediary or Carrier Code
+     Description: Number assigned to the previous Medicare Administrative
+                  Contractor, intermediary or carrier servicing this
+                  provider.
+     SAS Name:    INTRMDRY_CARR_PRIOR_CD
+     COBOL Name:  INTRMDRY-CARR-PRIOR-CD
+     VALUES:      00000=DUMMY FOR MEDICAID HHA
+                  00010=BLUE CROSS (ALABAMA)
+                  00011=CAHABA
+                  00020=BLUE CROSS (ARKANSAS)
+                  00040=BLUE CROSS (CALIFORNIA)
+                  00060=BLUE CROSS (CONNECTICUT)
+                  00070=BLUE CROSS (DELAWARE)
+                  00090=BLUE CROSS (FLORIDA)
+                  00101=BLUE CROSS (GEORGIA)
+                  00121=HEALTH CARE SERVICE CORPORATION
+                  00122=HCSC - MICHIGAN
+                  00123=HCSC OF MICHIGAN
+                  00130=NATIONAL GOVERNMENT SERVICES
+                  00131=NATIONAL GOVERNMENT SERVICES
+                  00140=BLUE CROSS (IOWA/SOUTH DAKOTA)
+                  00150=BLUE CROSS (KANSAS)
+                  00160=NATIONAL GOVERNMENT SERVICES
+                  00180=NATIONAL GOVERNMENT SERVICES
+                  00181=NATIONAL GOVERNMENT SERVICES
+                  00190=BLUE CROSS (MARYLAND)
+                  00200=BLUE CROSS (MASSACHUSETTS)
+                  00210=BLUE CROSS (MICHIGAN)
+                  00220=BLUE CROSS (MINNESOTA)
+                  00230=BLUE CROSS (MISSISSIPPI)
+                  00231=BLUE CROSS (LOUISIANA)
+                  00233=PINNACLE
+                  00241=BLUE CROSS (MISSOURI)
+                  00260=BLUE CROSS (NEBRASKA)
+                  00270=NATIONAL GOVERNMENT SERVICES
+                  00280=BLUE CROSS (NEW JERSEY)
+                  00290=BLUE CROSS (NEW MEXICO)
+                  00308=NATIONAL GOVERNMENT SERVICES
+                  00310=BLUE CROSS (NORTH CAROLINA)
+                  00320=NORIDIAN PART A
+                  00322=NORIDIAN PART A (AK/WA)
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 9
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+                  00323=NORIDIAN PART A (ID/OR)
+                  00325=NORIDIAN
+                  00332=NATIONAL GOVERNMENT SERVICES
+                  00340=BLUE CROSS (OKLAHOMA)
+                  00350=BLUE CROSS (OREGON)
+                  00351=BLUE CROSS (OREGON) (IDAHO CLAIMS)
+                  00362=BLUE CROSS (INDEPENDENCE)
+                  00363=BLUE CROSS (WESTERN PENNSYLVANIA)
+                  00366=HIGHMARK MEDICARE SERVICES
+                  00370=BLUE CROSS (RHODE ISLAND)
+                  00380=BLUE CROSS (SOUTH CAROLINA)
+                  00390=BLUE CROSS (TENNESSEE)
+                  00400=BLUE CROSS (TEXAS)
+                  00410=BLUE CROSS (UTAH)
+                  00423=BLUE CROSS (VIRGINIA/WEST VA)
+                  00430=BLUE CROSS (WASHINGTON & ALASKA)
+                  00450=NATIONAL GOVERNMENT SERVICES
+                  00452=NATIONAL GOVERNMENT SERVICES
+                  00453=NATIONAL GOVERNMENT SERVICES
+                  00454=NATIONAL GOVERNMENT SERVICES
+                  00456=NATIONAL GOVERNMENT SERVICES
+                  00468=BLUE CROSS (NORTH CAROLINA FOR PR)
+                  00510=BLUE SHIELD (ALABAMA)
+                  00511=CAHABA
+                  00512=CAHABA
+                  00520=BLUE SHIELD (ARKANSAS)
+                  00528=BLUE SHIELD (ARKANSAS/LOUISIANA)
+                  00542=BLUE SHIELD (CALIFORNIA)
+                  00550=BLUE SHIELD (COLORADO)
+                  00570=BLUE SHIELD (DELAWARE)
+                  00580=BLUE SHIELD (DISTRICT OF COLUMBIA)
+                  00590=BLUE SHIELD (FLORIDA)
+                  00621=BLUE SHIELD (ILLINOIS)
+                  00630=NATIONAL GOVERNMENT SERVICES
+                  00640=BLUE SHIELD (IOWA)
+                  00650=BLUE SHIELD (KANSAS)
+                  00655=BLUE SHIELD (KANSAS/NEBRASKA)
+                  00660=NATIONAL GOVERNMENT SERVICES
+                  00690=BLUE SHIELD (MARYLAND)
+                  00700=BLUE SHIELD (MASSACHUSETTS)
+                  00710=BLUE SHIELD (MICHIGAN)
+                  00720=BLUE SHIELD (MINNESOTA)
+                  00740=BLUE SHIELD (KANSAS CITY)
+                  00770=BLUE SHIELD (NEW HAMPSHIRE/VERMONT)
+                  00780=BLUE SHIELD (TRI-STATE)
+                  00801=BLUE SHIELD (BUFFALO)
+                  00803=NATIONAL GOVERNMENT SERVICES
+                  00805=NATIONAL GOVERNMENT SERVICES
+                  00821=NORIDIAN
+                  00824=NORIDIAN GVT SERVICES (CO)
+                  00826=NORIDIAN GVT SERVICES (IA)
+                  00831=NORIDIAN GVT SERVICES (AK)
+                  00832=NORIDIAN GVT SERVICES (AZ)
+                  00833=NORIDIAN GVT SERVICES (HI)
+                  00834=NORIDIAN GVT SERVICES (NV)
+                  00835=NORIDIAN GVT SERVICES (OR)
+                  00836=NORIDIAN GVT SERVICES (WA)
+                  00860=BLUE SHIELD (PENNSYLVANIA/NEW JERSEY)
+                  00865=BLUE SHIELD (PENNSYLVANIA)
+                  00870=BLUE SHIELD (RHODE ISLAND)
+                  00880=BLUE SHIELD (SOUTH CAROLINA)
+                  00883=PALMETTO GBA PART B
+                  00884=PALMETTO GBA
+                  00889=NORIDIAN GVT SERVICES (SD)
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 10
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+                  00900=BLUE SHIELD (TEXAS)
+                  00901=TRAILBLAZERS HEALTH ENTERPRISES
+                  00904=TRAILBLAZER
+                  00910=BLUE SHIELD (UTAH)
+                  00930=BLUE SHIELD (WASHINGTON)
+                  00951=WISCONSIN PHYSICIANS SERVICE
+                  00952=WPS - ILLINOIS
+                  00953=WPS - MICHIGAN
+                  00954=WI PHYSICIAN SERVICES - MN
+                  00973=BLUE SHIELD (PUERTO RICO)
+                  00974=BLUE SHIELD (VIRGIN ISLANDS)
+                  01010=AETNA (PEORIA)
+                  01020=AETNA (ALASKA)
+                  01030=AETNA (ARIZONA)
+                  01040=AETNA (GEORGIA)
+                  01101=PALMETTO (CALIFORNIA)
+                  01102=PALMETTO (CALIFORNIA (NORTH)
+                  01111=Noridian (CA)
+                  01112=Noridian (NF)
+                  01120=AETNA (HAWAII)
+                  01182=Noridian (SF)
+                  01192=PALMETTO (CALIFORNIA SOUTH)
+                  01201=PALMETTO (HAWAII)
+                  01202=PALMETTO (HAWAII)
+                  01211=Noridian (AS, GU, HI)
+                  01212=Noridian (AS, GU, HI)
+                  01290=AETNA (NEVADA)
+                  01301=PALMETTO (NEVADA)
+                  01302=PALMETTO (NEVADA)
+                  01311=Noridian (NV)
+                  01312=Noridian (NV)
+                  01360=AETNA (NEW MEXICO)
+                  01370=AETNA (OKLAHOMA)
+                  01380=AETNA (OREGON)
+                  01390=AETNA (WASHINGTON)
+                  01901=PALMETTO GBA
+                  01902=PALMETTO GBA
+                  01911=Noridian (AS, GU, HI, NV)
+                  02050=OCCIDENTAL (CALIFORNIA)
+                  02101=Noridian AK
+                  02102=Noridian AK
+                  02201=Noridian ID
+                  02202=Noridian ID
+                  02301=Noridian OR
+                  02302=Noridian OR
+                  02401=Noridian WA
+                  02402=Noridian WA
+                  03001=NORIDIAN ADMIN SERVICES
+                  03101=NORIDAN (ARIZONA)
+                  03102=NORIDAN (ARIZONA)
+                  03201=NORIDAN (MONTANA)
+                  03202=NORIDAN (MONTANA)
+                  03301=NORDIAN (NORTH DAKOTA)
+                  03302=NORDIAN (NORTH DAKOTA)
+                  03401=NORIDIAN (SOUTH DAKOTA)
+                  03402=NORIDIAN (SOUTH DAKOTA)
+                  03501=NORIDIAN (UTAH)
+                  03502=NORIDIAN (UTAH)
+                  03601=NORIDIAN (WYOMING)
+                  03602=NORIDIAN (WYOMING)
+                  04001=TRAILBLAZER
+                  04101=TRAILBLAZER (COLORADO)
+                  04102=TRAILBLAZER (COLORADO)
+                  04111=NOVITAS (COLORADO)
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 11
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+                  04112=NOVITAS (COLORADO)
+                  04201=TRAILBLAZER (NEW MEXICO)
+                  04202=TRAILBLAZER (NEW MEXICO)
+                  04211=NOVITAS (NEW MEXICO)
+                  04212=NOVITAS (NEW MEXICO)
+                  04301=TRAILBLAZER (OKLAHOMA)
+                  04302=TRAILBLAZER (OKLAHOMA)
+                  04311=NOVITAS (OKLAHOMA)
+                  04312=NOVITAS (OKLAHOMA)
+                  04401=TRAILBLAZER (TEXAS)
+                  04402=TRAILBLAZER (TEXAS)
+                  04411=NOVITAS (TEXAS)
+                  04412=NOVITAS (TEXAS)
+                  04901=MUTUAL LEGACY
+                  04911=NOVITAS
+                  05101=WPS (IOWA)
+                  05102=WPS (IOWA)
+                  05130=EQICOR (IDAHO)
+                  05201=WPS (KANSAS)
+                  05202=WPS (KANSAS)
+                  05301=WPS (MISSOURI)
+                  05302=WPS (MISSOURI WEST)
+                  05392=WPS (MISSOURI EAST)
+                  05401=WPS (NEBRASKA)
+                  05402=WPS (NEBRASKA)
+                  05440=EQICOR (TENNESSEE)
+                  05535=EQICOR (NORTH CAROLINA)
+                  05901=WISCONSIN PHYSICIANS SERVICE
+                  06001=NGS (WI)
+                  06004=National Govt Serv HHH
+                  06101=NGS (IL)
+                  06102=NGS (IL)
+                  06201=NGS (MN)
+                  06202=NGS (MN)
+                  06301=NGS (WI)
+                  06302=NGS (WI)
+                  07101=Novitas AR
+                  07102=Novitas AR
+                  07201=Novitas LA
+                  07202=Novitas LA
+                  07301=Novitas MS
+                  07302=Novitas MS
+                  08101=WPS IN
+                  08102=WPS IN
+                  08201=WPS MI
+                  08202=WPS MI
+                  09101=FIRST COAST (FLORIDA)
+                  09102=FIRST COAST (FLORIDA)
+                  09201=FIRST COAST (PUERTO RICO/VIRGIN ISLANDS)
+                  09202=FIRST COAST (PUERTO RICO)
+                  09302=FIRST COAST (VIRGIN ISLANDS)
+                  10071=TRAVELERS (RRB)
+                  10101=CAHABA GBA (AL)
+                  10102=CAHABA GBA (AL)
+                  10111=PALMETTO GBA (Part A) (AL)
+                  10201=CAHABA GBA (GA)
+                  10202=CAHABA GBA (GA)
+                  10211=PALMETTO GBA (GA)
+                  10230=TRAVELERS (CONNECTICUT)
+                  10240=TRAVELERS (MINNESOTA)
+                  10250=TRAVELERS (MISSISSIPPI)
+                  10301=CAHABA GBA (TN)
+                  10302=CAHABA GBA (TN)
+                  10311=PALMETTO GBA (TN)
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 12
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+                  10490=TRAVELERS (VIRGINIA)
+                  10492=TRAVELERS - VIRGINIA SPECIAL PROJECT
+                  11004=PALMETTO HHH C
+                  11201=PALMETTO GBA (SC)
+                  11202=PALMETTO GBA (SC)
+                  11260=GENERAL AMERICAN
+                  11301=PALMETTO GBA (VA)
+                  11302=PALMETTO GBA (VA)
+                  11401=PALMETTO GBA (WV)
+                  11402=PALMETTO GBA (WV)
+                  11501=PALMETTO GBA (NC)
+                  11502=PALMETTO GBA (NC)
+                  12101=Novitas DE
+                  12102=Novitas DE
+                  12201=Novitas DC
+                  12202=Novitas DC
+                  12301=Novitas MD
+                  12302=Novitas MD
+                  12401=Novitas NJ
+                  12402=Novitas NJ
+                  12501=Novitas PA
+                  12502=Novitas PA
+                  12901=Novitas Solutions DC, DE, MD, PA
+                  12902=HIGHMARK
+                  13101=NATIONAL GOVT SERVICES (CONNECTICUT)
+                  13102=NATIONAL GOVT SERVICES (CONNECTICUT)
+                  13201=NATIONAL GOVT SERVICES (NEW YORK)
+                  13202=NATIONAL GOVT SERVICES (NEW YORK - EMPIRE)
+                  13282=NGS (UN)
+                  13292=NGS (QN)
+                  14004=NATIONAL HERITAGE (HHA - A)
+                  14014=NGS (HHA)
+                  14101=NATIONAL HERITAGE (MAINE)
+                  14102=NATIONAL HERITAGE (MAINE)
+                  14111=NGS (ME)
+                  14112=NGS (ME)
+                  14201=NATIONAL HERITAGE (MASSACHUSETTS)
+                  14202=NATIONAL HERITAGE (MASSACHUSETTS)
+                  14211=NGS (MA)
+                  14212=NGS (MA)
+                  14301=NATIONAL HERITAGE (NEW HAMPSHIRE)
+                  14302=NATIONAL HERITAGE (NEW HAMPSHIRE)
+                  14311=NGS (NH)
+                  14312=NGS (NH)
+                  14330=GROUP HEALTH INC (NEW YORK)
+                  14401=NATIONAL HERITAGE (RHODE ISLAND)
+                  14402=NATIONAL HERITAGE (RHODE ISLAND)
+                  14411=NGS (RI)
+                  14412=NGS (RI)
+                  14501=NATIONAL HERITAGE (VERMONT)
+                  14502=NATIONAL HERITAGE (VERMONT)
+                  14511=NGS (VT)
+                  14512=NGS (VT)
+                  15004=CGS Administrators HHH
+                  15101=CGS (KENTUCKY)
+                  15102=CGS (KENTUCKY)
+                  15201=CGS (OHIO)
+                  15202=CGS (OHIO)
+                  16360=NATIONWIDE (OHIO)
+                  16510=NATIONWIDE (WEST VIRGINIA)
+                  17120=HAWAII MEDICAL SERVICE ASSOCIATION
+                  21200=MASSACHUSETTS/MAINE
+                  31142=NATIONAL HERITAGE INSURANCE CO (MAINE)
+                  31143=NATIONAL HERITAGE INSURANCE CO
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 13
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+                  31144=NATIONAL HERITAGE INSURANCE CO
+                  50333=TRAVELERS (NEW YORK)
+                  51051=AETNA (PETALUMA)
+                  51070=AETNA (FARMINGTON)
+                  51100=AETNA (CLEARWATER)
+                  51140=AETNA (PEORIA)
+                  51390=AETNA (FORT WASHINGTON)
+                  52280=WISCONSIN PHYSICIANS SERVICE
+                  57400=COOPERATIVA (PUERTO RICO)
+
+   CCN                                               10   158   167  VARCHAR2
+     Description: Six or ten position identification number that is
+                  assigned to a certified provider.  This is the CMS
+                  Certification Number.
+     SAS Name:    PRVDR_NUM
+     COBOL Name:  PRVDR-NUM
+
+   Region Code                                       2    168   169  VARCHAR2
+     Description: Indicates the CMS Regional Office responsible for the
+                  certification of the provider.
+     SAS Name:    RGN_CD
+     COBOL Name:  RGN-CD
+     VALUES:      01=Boston
+                  02=New York
+                  03=Philadelphia
+                  04=Atlanta
+                  05=Chicago
+                  06=Dallas
+                  07=Kansas City
+                  08=Denver
+                  09=San Francisco
+                  10=Seattle
+
+   Skeleton Record Indicator                         1    170   170  VARCHAR2
+     Description: Indicates if the record is a skeleton record.  Only a
+                  limited set of data is available for this provider; no
+                  survey data exists.  Only provider categories
+                  01,17,19,21and 22 can have skeleton providers.
+     SAS Name:    SKLTN_REC_SW
+     COBOL Name:  SKLTN-REC-SW
+
+   State Abbreviation                                2    171   172  VARCHAR2
+     Description: Two-character state abbreviation.
+     SAS Name:    STATE_CD
+     COBOL Name:  STATE-CD
+     VALUES:      AK=ALASKA
+                  AL=ALABAMA
+                  AR=ARKANSAS
+                  AS=AMERICAN SAMOA
+                  AZ=ARIZONA
+                  CA=CALIFORNIA
+                  CN=CANADA
+                  CO=COLORADO
+                  CT=CONNECTICUT
+                  DC=DISTRICT OF COLUMBIA
+                  DE=DELAWARE
+                  FL=FLORIDA
+                  FN=INTERNATIONAL
+                  GA=GEORGIA
+                  GU=GUAM
+                  HI=HAWAII
+                  IA=IOWA
+                  ID=IDAHO
+                  IL=ILLINOIS
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 14
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+                  IN=INDIANA
+                  KS=KANSAS
+                  KY=KENTUCKY
+                  LA=LOUISIANA
+                  MA=MASSACHUSETTS
+                  MD=MARYLAND
+                  ME=MAINE
+                  MI=MICHIGAN
+                  MN=MINNESOTA
+                  MO=MISSOURI
+                  MP=SAIPAN
+                  MS=MISSISSIPPI
+                  MT=MONTANA
+                  MX=MEXICO
+                  NC=NORTH CAROLINA
+                  ND=NORTH DAKOTA
+                  NE=NEBRASKA
+                  NH=NEW HAMPSHIRE
+                  NJ=NEW JERSEY
+                  NM=NEW MEXICO
+                  NV=NEVADA
+                  NY=NEW YORK
+                  OH=OHIO
+                  OK=OKLAHOMA
+                  OR=OREGON
+                  PA=PENNSYLVANIA
+                  PR=PUERTO RICO
+                  RI=RHODE ISLAND
+                  SC=SOUTH CAROLINA
+                  SD=SOUTH DAKOTA
+                  TN=TENNESSEE
+                  TX=TEXAS
+                  UT=UTAH
+                  VA=VIRGINIA
+                  VI=VIRGIN ISLANDS
+                  VT=VERMONT
+                  WA=WASHINGTON
+                  WI=WISCONSIN
+                  WV=WEST VIRGINIA
+                  WY=WYOMING
+
+   SSA State Code                                    2    173   174  VARCHAR2
+     Description: Social Security Administration geographic code indicating
+                  the state where the provider is located.
+     SAS Name:    SSA_STATE_CD
+     COBOL Name:  SSA-STATE-CD
+     VALUES:      01=ALABAMA
+                  02=ALASKA
+                  03=ARIZONA
+                  04=ARKANSAS
+                  05=CALIFORNIA
+                  06=COLORADO
+                  07=CONNECTICUT
+                  08=DELAWARE
+                  09=DISTRICT OF COLUMBIA
+                  10=FLORIDA
+                  11=GEORGIA
+                  12=HAWAII
+                  13=IDAHO
+                  14=ILLINOIS
+                  15=INDIANA
+                  16=IOWA
+                  17=KANSAS
+                  18=KENTUCKY
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 15
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+                  19=LOUISIANA
+                  20=MAINE
+                  21=MARYLAND
+                  22=MASSACHUSETTS
+                  23=MICHIGAN
+                  24=MINNESOTA
+                  25=MISSISSIPPI
+                  26=MISSOURI
+                  27=MONTANA
+                  28=NEBRASKA
+                  29=NEVADA
+                  30=NEW HAMPSHIRE
+                  31=NEW JERSEY
+                  32=NEW MEXICO
+                  33=NEW YORK
+                  34=NORTH CAROLINA
+                  35=NORTH DAKOTA
+                  36=OHIO
+                  37=OKLAHOMA
+                  38=OREGON
+                  39=PENNSYLVANIA
+                  40=PUERTO RICO
+                  41=RHODE ISLAND
+                  42=SOUTH CAROLINA
+                  43=SOUTH DAKOTA
+                  44=TENNESSEE
+                  45=TEXAS
+                  46=UTAH
+                  47=VERMONT
+                  48=VIRGIN ISLANDS
+                  49=VIRGINIA
+                  50=WASHINGTON
+                  51=WEST VIRGINIA
+                  52=WISCONSIN
+                  53=WYOMING
+                  54=AFRICA
+                  56=CANADA
+                  57=WEST INDIES
+                  58=EUROPE
+                  59=MEXICO
+                  60=OCEANIA
+                  61=PHILIPPINES
+                  62=SOUTH AMERICA
+                  63=UNITED STATES POSSESSIONS
+                  64=AMERICAN SAMOA
+                  65=GUAM
+                  66=SAIPAN
+                  99=INTERNATIONAL
+
+   State Region Code                                 3    175   177  VARCHAR2
+     Description: Identifies the region within a state where the provider
+                  is located.
+     SAS Name:    STATE_RGN_CD
+     COBOL Name:  STATE-RGN-CD
+     VALUES:      AK/001=ALASKA
+                  AK/LAB=LABORATORIES
+                  AK/NPH=NON-PARTICIPATING HOSPITAL
+                  AL/001=ALABAMA
+                  AL/LAB=LABORATORIES
+                  AL/NPH=NON-PARTICIPATING HOSPITAL
+                  AR/001=ARKANSAS
+                  AR/LAB=LABORATORIES
+                  AR/NPH=NON-PARTICIPATING HOSPITAL
+                  AS/001=AMERICAN SAMOA
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 16
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+                  AS/LAB=LABORATORY
+                  AS/NPH=NON-PARTICIPATING HOSPITAL
+                  AZ/AZ=PHOENIX
+                  AZ/LAB=ARIZONA LAB
+                  AZ/NPH=NON-PARTICIPATING HOSPITAL
+                  AZ/TUC=TUCSON
+                  CA/001=CALIFORNIA
+                  CA/BAK=BAKERSFIELD
+                  CA/BER=SAN BERNARDINO
+                  CA/BK=BERKELEY
+                  CA/BK1=CONTRA COSTA
+                  CA/FR=FRESNO
+                  CA/L1=L.A. WEST
+                  CA/L2=L.A. NORTH
+                  CA/L3=L.A. CENTRAL
+                  CA/L4=L.A. EAST
+                  CA/L5=SAN GABRIEL
+                  CA/LAB=LABORATORIES
+                  CA/M1=LAB. SOUTH
+                  CA/M2=LAB. NORTH
+                  CA/NPH=NON-PARTICIPATING HOSPITAL
+                  CA/ORG=ORANGE CO
+                  CA/RIV=RIVERSIDE
+                  CA/RWC=REDWOOD COAST
+                  CA/S1=SACRAMENTO
+                  CA/S2=SACTO SOUTH
+                  CA/S3=CHICO
+                  CA/SD=SAN DIEGO
+                  CA/SDS=SAN DIEGO SOUTH
+                  CA/SF=SAN FRANCISCO
+                  CA/SJ=SAN JOSE
+                  CA/SR=SANTA ROSA
+                  CA/VEN=VENTURA
+                  CN/001=CANADA
+                  CN/LAB=LABORATORY
+                  CN/NPH=NON-PARTICIPATING HOSPITAL
+                  CO/001=COLORADO
+                  CO/LAB=LABORATORIES
+                  CO/NPH=NON-PARTICIPATING HOSPITAL
+                  CT/001=CONNECTICUT
+                  CT/LAB=LABORATORIES
+                  CT/NPH=NON-PARTICIPATING HOSPITAL
+                  DC/001=DISTRICT OF COLUMBIA
+                  DC/LAB=LABORATORIES
+                  DC/NPH=NON-PARTICIPATING HOSPITAL
+                  DE/001=DELAWARE
+                  DE/LAB=LABORATORIES
+                  DE/NPH=NON-PARTICIPATING HOSPITAL
+                  FL/001=FLORIDA
+                  FL/FTM=FT. MYERS
+                  FL/GAI=GAINESVILLE
+                  FL/JAX=JACKSONVILLE
+                  FL/LAB=LABORATORIES
+                  FL/LAN=LANTANA
+                  FL/LAU=LAUDERHILL
+                  FL/MIA=MIAMI
+                  FL/NPH=NON-PARTICIPATING HOSPITAL
+                  FL/ORL=ORLANDO
+                  FL/PEN=PENSACOLA
+                  FL/STP=ST. PETERSBURG
+                  FL/TAL=TALLAHASSEE
+                  FL/TAM=TAMPA
+                  FM/001=FEDERATED STATES OF MICRO
+                  FM/NPH=NON-PARTICIPATING HOSPITAL
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 17
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+                  FN/001=INTERNATIONAL
+                  FN/LAB=LABORATORIES
+                  FN/NPH=NON-PARTICIPATING HOSPITAL
+                  GA/001=GEORGIA
+                  GA/GAA=GEORGIA ALL
+                  GA/GAC=GEORGIA CENTRAL
+                  GA/GAE=GEORGIA EASTERN
+                  GA/GAN=GEORGIA NORTH
+                  GA/GAS=GEORGIA SOUTH
+                  GA/GAW=GEORGIA WESTERN
+                  GA/LAB=LABORATORIES
+                  GA/NPH=NON-PARTICIPATING HOSPITAL
+                  GU/001=GUAM
+                  GU/LAB=LABORATORIES
+                  GU/NPH=NON-PARTICIPATING HOSPITAL
+                  HI/001=HAWAII
+                  HI/LAB=LABORATORIES
+                  HI/NPH=NON-PARTICIPATING HOSPITAL
+                  IA/001=IOWA
+                  IA/LAB=LABORATORIES
+                  IA/NPH=NON-PARTICIPATING HOSPITAL
+                  ID/001=IDAHO
+                  ID/LAB=LABORATORIES
+                  ID/NPH=NON-PARTICIPATING HOSPITAL
+                  IL/001=ILLINOIS
+                  IL/LAB=LABORATORIES
+                  IL/NPH=NON-PARTICIPATING HOSPITAL
+                  IN/001=INDIANA
+                  IN/LAB=LABORATORIES
+                  IN/NPH=NON-PARTICIPATING HOSPITAL
+                  KS/001=KANSAS
+                  KS/KCK=KANSAS CITY
+                  KS/KDH=KDHE
+                  KS/LAB=LABORATORIES
+                  KS/LAW=LAWRENCE
+                  KS/NC=NORTH CENTRAL KANSAS
+                  KS/NE=NORTH EAST KANSAS
+                  KS/NPH=NON-PARTICIPATING HOSPITAL
+                  KS/NW=NORTH WEST KANSAS
+                  KS/SC=SOUTH CENTRAL KANSAS
+                  KS/SE=SOUTH EAST KANSAS
+                  KS/SW=SOUTH WEST KANSAS
+                  KS/WST=WEST
+                  KY/2C1=HOPKINSVILLE
+                  KY/2C2=LOUISVILLE
+                  KY/2C3=LONDON
+                  KY/2C4=LEXINGTON
+                  KY/LAB=LABORATORIES
+                  KY/NPH=NON-PARTICIPATING HOSPITAL
+                  LA/001=LOUISIANA
+                  LA/LA1=NEW ORLEANS
+                  LA/LA2=MANDEVILLE
+                  LA/LA3=LAFAYETTE
+                  LA/LA4=MONROE
+                  LA/LA5=SHREVEPORT
+                  LA/LA6=ALEXANDRIA
+                  LA/LAB=LABORATORIES
+                  LA/LB1=CLIA NEW ORLEANS
+                  LA/LB5=CLIA SHREVEPORT
+                  LA/LB6=CLIA ALEXANDRIA
+                  LA/NPH=NON-PARTICIPATING HOSPITAL
+                  MA/001=MASSACHUSETTS
+                  MA/LAB=LABORATORIES
+                  MA/NPH=NON-PARTICIPATING HOSPITAL
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 18
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+                  MD/001=MARYLAND
+                  MD/LAB=LABORATORIES
+                  MD/NPH=NON-PARTICIPATING HOSPITAL
+                  ME/001=MAINE
+                  ME/LAB=LABORATORIES
+                  ME/NPH=NON-PARTICIPATING HOSPITAL
+                  MH/001=MARSHALL ISLANDS
+                  MH/NPH=NON-PARTICIPATING HOSPITAL
+                  MI/001=MICHIGAN
+                  MI/LAB=LABORATORIES
+                  MI/NPH=NON-PARTICIPATING HOSPITAL
+                  MN/001=MINNESOTA
+                  MN/LAB=LABORATORIES
+                  MN/NPH=NON-PARTICIPATING HOSPITAL
+                  MO/001=MISSOURI
+                  MO/01=REGION01
+                  MO/02=REGION02
+                  MO/03=REGION 03
+                  MO/04=REGION 04
+                  MO/05=REGION 05
+                  MO/06=REGION 06
+                  MO/07=REGION 07
+                  MO/1NH=REGION 1 NH
+                  MO/2NH=REGION 2 NH
+                  MO/3NH=REGION 3 NH
+                  MO/4NH=REGION 4 NH
+                  MO/5NH=REGION 5 NH
+                  MO/6NH=REGION 6 NH
+                  MO/7NH=REGION 7 NH
+                  MO/LAB=LABORATORIES
+                  MO/MO=STATEWIDE
+                  MO/NPH=NON-PARTICIPATING HOSPITAL
+                  MP/001=NORTHERN MARIANA ISLANDS
+                  MP/LAB=LABORATORIES
+                  MP/NPH=NON-PARTICIPATING HOSPITAL
+                  MS/001=MISSISSIPPI
+                  MS/LAB=LABORATORIES
+                  MS/NPH=NON-PARTICIPATING HOSPITAL
+                  MT/001=MONTANA
+                  MT/LAB=LABORATORIES
+                  MT/NPH=NON-PARTICIPATING HOSPITAL
+                  MX/001=MEXICO
+                  MX/LAB=LABORATORY
+                  MX/NPH=NON-PARTICIPATING HOSPITAL
+                  NC/001=NORTH CAROLINA
+                  NC/LAB=LABORATORIES
+                  NC/NCC=NORTH CAROLINA CENTRAL
+                  NC/NCE=NORTH CAROLINA EAST
+                  NC/NCN=NORTH CAROLINA NORTH
+                  NC/NCS=NORTH CAROLINA SOUTH
+                  NC/NCW=NORTH CAROLINA WEST
+                  NC/NPH=NON-PARTICIPATING HOSPITAL
+                  ND/001=NORTH DAKOTA
+                  ND/LAB=LABORATORIES
+                  ND/NPH=NON-PARTICIPATING HOSPITAL
+                  NE/001=NEBRASKA
+                  NE/1=NORTH CENTRAL
+                  NE/2=CENTRAL
+                  NE/3=NORTHEAST
+                  NE/4=SOUTHEAST
+                  NE/5=WESTERN
+                  NE/LAB=LABORATORIES
+                  NE/NPH=NON-PARTICIPATING HOSPITAL
+                  NH/001=NEW HAMPSHIRE
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 19
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+                  NH/LAB=LABORATORIES
+                  NH/NPH=NON-PARTICIPATING HOSPITAL
+                  NJ/001=NEW JERSEY
+                  NJ/LAB=LABORATORIES
+                  NJ/NPH=NON-PARTICIPATING HOSPITAL
+                  NM/001=NEW MEXICO
+                  NM/LAB=LABORATORIES
+                  NM/NPH=NON-PARTICIPATING HOSPITAL
+                  NV/001=NEVADA
+                  NV/CC=CARSON CITY
+                  NV/LAB=LABORATORIES
+                  NV/LV=LAS VEGAS
+                  NV/NPH=NON-PARTICIPATING HOSPITAL
+                  NY/001=BUFFALO
+                  NY/002=ROCHESTER
+                  NY/003=SYRACUSE
+                  NY/004=ALBANY
+                  NY/005=NEW ROCHELLE
+                  NY/006=NEW YORK CITY
+                  NY/007=SUFFOLK/NASSAU COUNTY
+                  NY/LAB=LABORATORIES
+                  NY/NPH=NON-PARTICIPATING HOSPITAL
+                  OH/001=OHIO
+                  OH/LAB=LABORATORIES
+                  OH/NPH=NON-PARTICIPATING HOSPITAL
+                  OK/001=OKLAHOMA
+                  OK/LAB=LABORATORIES
+                  OK/NPH=NON-PARTICIPATING HOSPITAL
+                  OR/001=OFFICE #1
+                  OR/002=OFFICE #2
+                  OR/003=OFFICE #3
+                  OR/LAB=LABORATORIES
+                  OR/NPH=NON-PARTICIPATING HOSPITAL
+                  PA/001=PENNSYLVANIA
+                  PA/LAB=LABORATORIES
+                  PA/NPH=NON-PARTICIPATING HOSPITAL
+                  PR/001=PUERTO RICO
+                  PR/LAB=LABORATORIES
+                  PR/NPH=NON-PARTICIPATING HOSPITAL
+                  PW/001=PALAU
+                  PW/NPH=NON-PARTICIPATING HOSPITAL
+                  RI/001=RHODE ISLAND
+                  RI/LAB=LABORATORIES
+                  RI/NPH=NON-PARTICIPATING HOSPITAL
+                  SC/001=SOUTH CAROLINA
+                  SC/LAB=LABORATORIES
+                  SC/NPH=NON-PARTICIPATING HOSPITAL
+                  SD/001=SOUTH DAKOTA
+                  SD/LAB=LABORATORIES
+                  SD/NPH=NON-PARTICIPATING HOSPITAL
+                  TN/001=TENNESSEE
+                  TN/LAB=LABORATORIES
+                  TN/NPH=NON-PARTICIPATING HOSPITAL
+                  TN/TNC=TENNESSEE COOKEVILLE
+                  TN/TNE=TENNESSEE EASTERN
+                  TN/TNM=TENNESSEE MIDDLE
+                  TN/TNW=TENNESSEE WESTERN
+                  TX/001=TEXAS
+                  TX/L01=AMARILLO-LTC
+                  TX/L02=ABILENE-LTC
+                  TX/L03=ARLINGTON-LTC
+                  TX/L04=TYLER-LTC
+                  TX/L05=BEAUMONT-LTC
+                  TX/L06=HOUSTON-LTC
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 20
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+                  TX/L07=TEMPLE-LTC
+                  TX/L08=SAN ANTONIO-LTC
+                  TX/L09=SAN ANGELO-LTC
+                  TX/L10=EL PASO-LTC
+                  TX/L11=CORPUS CHRISTI-LTC
+                  TX/LAB=LABORATORIES
+                  TX/NPH=NON-PARTICIPATING HOSPITAL
+                  TX/TX1=LUBBOCK
+                  TX/TX2=ARLINGTON
+                  TX/TX3=SAN ANTONIO
+                  TX/TX4=HOUSTON
+                  TX/TX5=TYLER
+                  TX/TX6=AUSTIN
+                  UT/001=UTAH
+                  UT/LAB=LABORATORIES
+                  UT/NPH=NON-PARTICIPATING HOSPITAL
+                  VA/001=VIRGINIA
+                  VA/LAB=LABORATORIES
+                  VA/NPH=NON-PARTICIPATING HOSPITAL
+                  VI/001=VIRGIN ISLANDS
+                  VI/LAB=LABORATORIES
+                  VI/NPH=NON-PARTICIPATING HOSPITAL
+                  VT/001=VERMONT
+                  VT/LAB=LABORATORIES
+                  VT/NPH=NON-PARTICIPATING HOSPITAL
+                  WA/001=ALL OTHERS (NON-LTC FAC)
+                  WA/D1=SPOKANE & YAKIMA AREAS
+                  WA/D1A=District 1, Unit A
+                  WA/D1B=District 1, Unit B
+                  WA/D1C=District 1, Unit C
+                  WA/D1D=District 1, Unit D
+                  WA/D2=SPOKANE & SE
+                  WA/D2A=District 2, Unit A
+                  WA/D2B=District 2, Unit B
+                  WA/D2C=District 2, Unit C
+                  WA/D2D=District 2, Unit D
+                  WA/D2E=District 2, Unit E
+                  WA/D2F=District 2, Unit F
+                  WA/D2G=District 2, Unit G
+                  WA/D2H=District 2, Unit H
+                  WA/D3=NW WASHINGTON
+                  WA/D3A=District 3, Unit A
+                  WA/D3B=District 3, Unit B
+                  WA/D3C=District 3, Unit C
+                  WA/D3D=District 3, Unit D
+                  WA/D3E=District 3, Unit E
+                  WA/D4A=GREATER SEATTLE AREA
+                  WA/D4B=S KING COUNTY
+                  WA/D5A=PIERCE CTY & PENINSULA
+                  WA/D5B=PIERCE CTY & GRAYS HARBOR
+                  WA/D6=OLYMPIA AREA
+                  WA/LAB=LABORATORIES
+                  WA/NPH=NON-PARTICIPATING HOSPITAL
+                  WI/001=WISCONSIN
+                  WI/LAB=LABORATORIES
+                  WI/NPH=NON-PARTICIPATING HOSPITAL
+                  WV/001=WEST VIRGINIA
+                  WV/LAB=LABORATORIES
+                  WV/NPH=NON-PARTICIPATING HOSPITAL
+                  WY/001=WYOMING
+                  WY/LAB=LABORATORIES
+                  WY/NPH=NON-PARTICIPATING HOSPITAL
+
+   Address: Street                                   50   178   227  VARCHAR2
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 21
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+     Description: Street address where the provider is located.
+     SAS Name:    ST_ADR
+     COBOL Name:  ST-ADR
+
+   Telephone Number                                  10   228   237  VARCHAR2
+     Description: Telephone number of the provider.
+     SAS Name:    PHNE_NUM
+     COBOL Name:  PHNE-NUM
+
+   Termination Code                                  2    238   239  VARCHAR2
+     Description: Indicates the current termination status for the
+                  provider.
+     SAS Name:    PGM_TRMNTN_CD
+     COBOL Name:  PGM-TRMNTN-CD
+     VALUES:      00=ACTIVE PROVIDER
+                  01=VOLUNTARY-MERGER, CLOSURE
+                  02=VOLUNTARY-DISSATISFACTION WITH REIMBURSEMENT
+                  03=VOLUNTARY-RISK OF INVOLUNTARY TERMINATION
+                  04=VOLUNTARY-OTHER REASON FOR WITHDRAWAL
+                  05=INVOLUNTARY-FAILURE TO MEET HEALTH/SAFETY REQ
+                  06=INVOLUNTARY-FAILURE TO MEET AGREEMENT
+                  07=OTHER-PROVIDER STATUS CHANGE
+                  08=NONPAYMENT OF FEES - CLIA Only
+                  09=REV/UNSUCCESSFUL PARTICIPATION IN PT - CLIA Only
+                  10=REV/OTHER REASON - CLIA Only
+                  11=INCOMPLETE CLIA APPLICATION INFORMATION - CLIA Only
+                  12=NO LONGER PERFORMING TESTS - CLIA Only
+                  13=MULTIPLE TO SINGLE SITE CERTIFICATE - CLIA Only
+                  14=SHARED LABORATORY - CLIA Only
+                  15=FAILURE TO RENEW WAIVER PPM CERTIFICATE - CLIA Only
+                  16=DUPLICATE CLIA NUMBER - CLIA Only
+                  17=MAIL RETURNED NO FORWARD ADDRESS CERT ENDED - CLIA Only
+                  20=NOTIFICATION BANKRUPTCY - CLIA Only
+                  33=ACCREDITATION NOT CONFIRMED - CLIA Only
+                  80=AWAITING STATE APPROVAL
+                  99=OIG ACTION - DO NOT ACTIVATE - CLIA Only
+
+   Termination or Expiration Date                    8    240   247  DATE
+     Description: Date the provider was terminated.  For CLIA providers,
+                  date the laboratory's certificate was terminated or the
+                  expiration date of the current CLIA certificate.
+     SAS Name:    TRMNTN_EXPRTN_DT
+     COBOL Name:  TRMNTN-EXPRTN-DT
+
+   Type of Action Code                               1    248   248  VARCHAR2
+     Description: Identifies the reason for the certification.  Type of
+                  action from the official survey record, CMS 1539 form.
+     SAS Name:    CRTFCTN_ACTN_TYPE_CD
+     COBOL Name:  CRTFCTN-ACTN-TYPE-CD
+     VALUES:      1=INITIAL
+                  2=RECERTIFICATION
+                  3=TERMINATION
+                  4=CHANGE OF OWNERSHIP
+                  5=VALIDATION
+                  8=FULL SURVEY AFTER COMPLAINT
+
+   Ownership Type Code                               2    249   250  VARCHAR2
+     Description: Indicates the ownership type of the provider.
+     SAS Name:    GNRL_CNTL_TYPE_CD
+     COBOL Name:  GNRL-CNTL-TYPE-CD
+     VALUES:      01=RELIGIOUS AFFILIATION
+                  02=PRIVATE
+                  03=OTHER
+                  04=PROPRIETARY
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 22
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+                  05=GOVERNMENT - CITY
+                  06=GOVERNMENT - COUNTY
+                  07=GOVERNMENT - STATE
+                  08=GOVERNMENT - FEDERAL
+                  09=GOVERNMENT - OTHER
+                  10=UNKNOWN
+
+   Address: ZIP Code                                 5    251   255  VARCHAR2
+     Description: Five-digit ZIP code for a provider's physical address.
+     SAS Name:    ZIP_CD
+     COBOL Name:  ZIP-CD
+
+   FIPS State Code                                   2    256   257  VARCHAR2
+     Description: FIPS State Code
+     SAS Name:    FIPS_STATE_CD
+     COBOL Name:  FIPS-STATE-CD
+     VALUES:      01=ALABAMA
+                  02=ALASKA
+                  04=ARIZONA
+                  05=ARKANSAS
+                  06=CALIFORNIA
+                  08=COLORADO
+                  09=CONNECTICUT
+                  10=DELAWARE
+                  11=DISTRICT OF COLUMBIA
+                  12=FLORIDA
+                  13=GEORGIA
+                  15=HAWAII
+                  16=IDAHO
+                  17=ILLINOIS
+                  18=INDIANA
+                  19=IOWA
+                  20=KANSAS
+                  21=KENTUCKY
+                  22=LOUISIANA
+                  23=MAINE
+                  24=MARYLAND
+                  25=MASSACHUSETTS
+                  26=MICHIGAN
+                  27=MINNESOTA
+                  28=MISSISSIPPI
+                  29=MISSOURI
+                  30=MONTANA
+                  31=NEBRASKA
+                  32=NEVADA
+                  33=NEW HAMPSHIRE
+                  34=NEW JERSEY
+                  35=NEW MEXICO
+                  36=NEW YORK
+                  37=NORTH CAROLINA
+                  38=NORTH DAKOTA
+                  39=OHIO
+                  40=OKLAHOMA
+                  41=OREGON
+                  42=PENNSYLVANIA
+                  43=PUERTO RICO
+                  44=RHODE ISLAND
+                  45=SOUTH CAROLINA
+                  46=SOUTH DAKOTA
+                  47=TENNESSEE
+                  48=TEXAS
+                  49=UTAH
+                  50=VERMONT
+                  51=VIRGINIA
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 23
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+                  53=WASHINGTON
+                  54=WEST VIRGINIA
+                  55=WISCONSIN
+                  56=WYOMING
+                  64=AMERICAN SAMOA
+                  65=GUAM
+                  66=SAIPAN/MARIANA IS.
+                  78=VIRGIN ISLANDS
+
+   FIPS County Code                                  3    258   260  VARCHAR2
+     Description: FIPS County Code
+     SAS Name:    FIPS_CNTY_CD
+     COBOL Name:  FIPS-CNTY-CD
+
+   CBSA Urban Rural Indicator                        1    261   261  VARCHAR2
+     Description: CBSA (Core Based Statistical Area) indicates whether the
+                  county is defined as Urban or Rural.
+     SAS Name:    CBSA_URBN_RRL_IND
+     COBOL Name:  CBSA-URBN-RRL-IND
+
+   CBSA Code                                         5    262   266  VARCHAR2
+     Description: CBSA (Core Based Statistical Area) geographic entities
+                  defined by the U.S. Office of Management and Budget (OMB)
+                  on June 6, 2003 for use by Federal statistical agencies
+                  in collecting, tabulating, and publishing Federal
+                  statistics.  CBSA collectively refers to MSA.
+     SAS Name:    CBSA_CD
+     COBOL Name:  CBSA-CD
+
+   Address: Street 2nd Line                          50   267   316  VARCHAR2
+     Description: Second line of a laboratory's street address.
+     SAS Name:    ADDTNL_ST_ADR
+     COBOL Name:  ADDTNL-ST-ADR
+
+   Affiliated Provider Number 1                      10   317   326  CHAR
+     Description: Affiliated provider number 1
+     SAS Name:    AFFILIATED_PROVIDER_NUMBER_1
+     COBOL Name:  AFFILIATED-PROVIDER-NUMBER-1
+
+   Affiliated Provider Number 2                      10   327   336  CHAR
+     Description: Affiliated provider number 2
+     SAS Name:    AFFILIATED_PROVIDER_NUMBER_2
+     COBOL Name:  AFFILIATED-PROVIDER-NUMBER-2
+
+   Affiliated Provider Number 3                      10   337   346  CHAR
+     Description: Affiliated provider number 3
+     SAS Name:    AFFILIATED_PROVIDER_NUMBER_3
+     COBOL Name:  AFFILIATED-PROVIDER-NUMBER-3
+
+   Affiliated Provider Number 4                      10   347   356  CHAR
+     Description: Affiliated provider number 4
+     SAS Name:    AFFILIATED_PROVIDER_NUMBER_4
+     COBOL Name:  AFFILIATED-PROVIDER-NUMBER-4
+
+   Affiliated Provider Number 5                      10   357   366  CHAR
+     Description: Affiliated provider number 5
+     SAS Name:    AFFILIATED_PROVIDER_NUMBER_5
+     COBOL Name:  AFFILIATED-PROVIDER-NUMBER-5
+
+   Affiliated Provider Number 6                      10   367   376  CHAR
+     Description: Affiliated provider number 6
+     SAS Name:    AFFILIATED_PROVIDER_NUMBER_6
+     COBOL Name:  AFFILIATED-PROVIDER-NUMBER-6
+
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 24
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+   Affiliated Provider Number 7                      10   377   386  CHAR
+     Description: Affiliated provider number 7
+     SAS Name:    AFFILIATED_PROVIDER_NUMBER_7
+     COBOL Name:  AFFILIATED-PROVIDER-NUMBER-7
+
+   Affiliated Provider Number 8                      10   387   396  CHAR
+     Description: Affiliated provider number 8
+     SAS Name:    AFFILIATED_PROVIDER_NUMBER_8
+     COBOL Name:  AFFILIATED-PROVIDER-NUMBER-8
+
+   AO A2LA Accredited Code                           1    397   397  VARCHAR2
+     Description: Indicates if the lab reported that it is accredited by
+                  the American Association for Laboratory Accreditation.
+                  This information is from the lab's CMS-116.
+     SAS Name:    A2LA_ACRDTD_CD
+     COBOL Name:  A2LA-ACRDTD-CD
+     VALUES:      X=ACCREDITED
+
+   AO A2LA Accredited Y Match Date                   8    398   405  DATE
+     Description: Date the American Association for Laboratory
+                  Accreditation confirmed the lab is accredited.  When the
+                  lab is accredited by multiple accrediting organizations,
+                  the earliest Y match date initiates  billing of the
+                  certificate of accreditation fees.
+     SAS Name:    A2LA_ACRDTD_Y_MATCH_DT
+     COBOL Name:  A2LA-ACRDTD-Y-MATCH-DT
+
+   AO A2LA Accredited Y Match Indicator              1    406   406  VARCHAR2
+     Description: Indicates if the lab is confirmed as accredited by the
+                  American Association for Laboratory Accreditation.
+     SAS Name:    A2LA_ACRDTD_Y_MATCH_SW
+     COBOL Name:  A2LA-ACRDTD-Y-MATCH-SW
+
+   AO AABB Accredited Code                           1    407   407  VARCHAR2
+     Description: Indicates if the lab reported that it is accredited by
+                  the American Association of Blood Banks.  This
+                  information is from the lab's CMS-116.
+     SAS Name:    AABB_ACRDTD_CD
+     COBOL Name:  AABB-ACRDTD-CD
+     VALUES:      X=ACCREDITED
+
+   AO AABB Accredited Y Match Date                   8    408   415  DATE
+     Description: Date the American Association of Blood Banks confirmed
+                  the lab is accredited.  When the lab is accredited by
+                  multiple accrediting organizations, the earliest Y match
+                  date initiates billing of the certificate of
+                  accreditation fees.
+     SAS Name:    AABB_ACRDTD_Y_MATCH_DT
+     COBOL Name:  AABB-ACRDTD-Y-MATCH-DT
+
+   AO AABB Accredited Y Match Indicator              1    416   416  VARCHAR2
+     Description: Indicates if the lab is confirmed as accredited by the
+                  American Association of Blood Banks.
+     SAS Name:    AABB_ACRDTD_Y_MATCH_SW
+     COBOL Name:  AABB-ACRDTD-Y-MATCH-SW
+
+   AO AOA Accredited Code                            1    417   417  VARCHAR2
+     Description: Indicates if the lab reported that it is accredited by
+                  the American Osteopathic Association.  This information
+                  is from the lab's CMS-116.
+     SAS Name:    AOA_ACRDTD_CD
+     COBOL Name:  AOA-ACRDTD-CD
+     VALUES:      X=ACCREDITED
+
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 25
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+   AO AOA Accredited Y Match Date                    8    418   425  DATE
+     Description: Date the American Osteopathic Association confirmed the
+                  lab is accredited.  When the lab is accredited by
+                  multiple accrediting organizations, the earliest Y match
+                  date initiates billing of the certificate of
+                  accreditation fees.
+     SAS Name:    AOA_ACRDTD_Y_MATCH_DT
+     COBOL Name:  AOA-ACRDTD-Y-MATCH-DT
+
+   AO AOA Accredited Y Match Indicator               1    426   426  VARCHAR2
+     Description: Indicates if the lab is confirmed as accredited by the
+                  American Osteopathic Association.
+     SAS Name:    AOA_ACRDTD_Y_MATCH_SW
+     COBOL Name:  AOA-ACRDTD-Y-MATCH-SW
+
+   AO ASHI Accredited Code                           1    427   427  VARCHAR2
+     Description: Indicates if the lab reported that it is accredited by
+                  the American Society for Histocompatibility and
+                  Immunogenetics.  This information is from the lab's
+                  CMS-116.
+     SAS Name:    ASHI_ACRDTD_CD
+     COBOL Name:  ASHI-ACRDTD-CD
+     VALUES:      X=ACCREDITED
+
+   AO ASHI Accredited Y Match Date                   8    428   435  DATE
+     Description: Date the American Society for Histocompatibility and
+                  Immunogenetics confirmed the lab is accredited.  When the
+                  lab is accredited by multiple accrediting organizations,
+                  the earliest Y match date initiates billing of the
+                  certificate of accreditation fees.
+     SAS Name:    ASHI_ACRDTD_Y_MATCH_DT
+     COBOL Name:  ASHI-ACRDTD-Y-MATCH-DT
+
+   AO ASHI Accredited Y Match Indicator              1    436   436  VARCHAR2
+     Description: Indicates if the lab is confirmed as accredited by the
+                  American Society for Histocompatibility and
+                  Immunogenetics.
+     SAS Name:    ASHI_ACRDTD_Y_MATCH_SW
+     COBOL Name:  ASHI-ACRDTD-Y-MATCH-SW
+
+   AO CAP Accredited Code                            1    437   437  VARCHAR2
+     Description: Indicates if the lab reported that it is accredited by
+                  the College of American Pathologists.  This information
+                  is from the lab's CMS-116.
+     SAS Name:    CAP_ACRDTD_CD
+     COBOL Name:  CAP-ACRDTD-CD
+     VALUES:      X=ACCREDITED
+
+   AO CAP Accredited Y Match Date                    8    438   445  DATE
+     Description: Date the College of American Pathologists confirmed the
+                  lab is accredited.  When the lab is accredited by
+                  multiple accrediting organizations, the earliest Y match
+                  date initiates billing of the certificate of
+                  accreditation fees.
+     SAS Name:    CAP_ACRDTD_Y_MATCH_DT
+     COBOL Name:  CAP-ACRDTD-Y-MATCH-DT
+
+   AO CAP Accredited Y Match Indicator               1    446   446  VARCHAR2
+     Description: Indicates if the lab is confirmed as accredited by the
+                  College of American Pathologists.
+     SAS Name:    CAP_ACRDTD_Y_MATCH_SW
+     COBOL Name:  CAP-ACRDTD-Y-MATCH-SW
+
+   AO COLA Accredited Code                           1    447   447  VARCHAR2
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 26
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+     Description: Indicates if the lab reported that it is accredited by
+                  the Commission on Office Laboratory Accreditation.  This
+                  information is from the lab's CMS-116.
+     SAS Name:    COLA_ACRDTD_CD
+     COBOL Name:  COLA-ACRDTD-CD
+     VALUES:      X=ACCREDITED
+
+   AO COLA Accredited Y Match Date                   8    448   455  DATE
+     Description: Date the Commission on Office Laboratory Accreditation
+                  confirmed the lab is accredited.  When the lab is
+                  accredited by multiple accrediting organizations, the
+                  earliest Y match date initiates billing of the
+                  certificate of accreditation fees.
+     SAS Name:    COLA_ACRDTD_Y_MATCH_DT
+     COBOL Name:  COLA-ACRDTD-Y-MATCH-DT
+
+   AO COLA Accredited Y Match Indicator              1    456   456  VARCHAR2
+     Description: Indicates if the lab is confirmed as accredited by the
+                  Commission on Office Laboratory Accreditation.
+     SAS Name:    COLA_ACRDTD_Y_MATCH_SW
+     COBOL Name:  COLA-ACRDTD-Y-MATCH-SW
+
+   AO JC Accredited Code                             1    457   457  VARCHAR2
+     Description: Indicates if the lab reported that it is accredited by
+                  the Joint Commission.  This information is from the lab's
+                  CMS-116.
+     SAS Name:    JCAHO_ACRDTD_CD
+     COBOL Name:  JCAHO-ACRDTD-CD
+     VALUES:      X=ACCREDITED
+
+   AO JC Accredited Y Match Date                     8    458   465  DATE
+     Description: Date the Joint Commission confirmed the lab is
+                  accredited.  When the lab is accredited by multiple
+                  accrediting organizations, the earliest Y match date
+                  initiates  billing of the certificate of accreditation
+                  fees.
+     SAS Name:    JCAHO_ACRDTD_Y_MATCH_DT
+     COBOL Name:  JCAHO-ACRDTD-Y-MATCH-DT
+
+   AO JC Accredited Y Match Indicator                1    466   466  VARCHAR2
+     Description: Indicates if the lab is confirmed as accredited by the
+                  Joint Commission.
+     SAS Name:    JCAHO_ACRDTD_Y_MATCH_SW
+     COBOL Name:  JCAHO-ACRDTD-Y-MATCH-SW
+
+   Application Received SA Date                      8    467   474  DATE
+     Description: Date the CMS-116 application was  entered  in the online
+                  system and a CLIA number was issued.
+     SAS Name:    APLCTN_RCVD_DT
+     COBOL Name:  APLCTN-RCVD-DT
+
+   Application Type Code                             1    475   475  VARCHAR2
+     Description: Type of CLIA certificate applied for by a laboratory.
+     SAS Name:    APLCTN_TYPE_CD
+     COBOL Name:  APLCTN-TYPE-CD
+     VALUES:      1=COMPLIANCE
+                  2=WAIVER
+                  3=ACCREDITATION
+                  4=PPM
+
+   Category-specific Facility Type Code              2    476   477  VARCHAR2
+     Description: Indicates the category-specific facility type code, for
+                  certain provider categories only.
+     SAS Name:    GNRL_FAC_TYPE_CD
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 27
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+     COBOL Name:  GNRL-FAC-TYPE-CD
+     VALUES:      01=Ambulance
+                  02=Ambulatory Surgery Center
+                  03=Ancillary Test Site
+                  04=Assisted Living Facility
+                  05=Blood Banks
+                  06=Community Clinic
+                  07=Comprehensive Outpatient Rehab
+                  08=End Stage Renal Disease Dialysis
+                  09=Federally Qualified Health Center
+                  10=Health Fair
+                  11=Health Maintenance Organization
+                  12=Home Health Agency
+                  13=Hospice
+                  14=Hospital
+                  15=Independent
+                  16=Industrial
+                  17=Insurance
+                  18=Intermediate Care Facility/Individuals with Intellectual Disabilities
+                  19=Mobile Lab
+                  20=Pharmacy
+                  21=Physician Office
+                  22=Other Practitioner
+                  23=Prison
+                  24=Public Health Laboratory
+                  25=Rural Health Clinic
+                  26=School/Student Health Service
+                  27=Skilled Nursing/Nursing Facility
+                  28=Tissue Bank/Repositories
+                  29=Other
+
+   CLIA Certificate Effective Date                   8    478   485  DATE
+     Description: Start date of the certificate.
+     SAS Name:    CRTFCT_EFCTV_DT
+     COBOL Name:  CRTFCT-EFCTV-DT
+
+   CLIA Certificate Mailed Date                      8    486   493  DATE
+     Description: Date the certificate was generated for mailing.
+     SAS Name:    CRTFCT_MAIL_DT
+     COBOL Name:  CRTFCT-MAIL-DT
+
+   CLIA Certificate Type Code                        1    494   494  VARCHAR2
+     Description: Type of certificate issued to the laboratory, based on
+                  the application type code.
+     SAS Name:    CRTFCT_TYPE_CD
+     COBOL Name:  CRTFCT-TYPE-CD
+     VALUES:      1=COMP
+                  2=WAIVER
+                  3=ACCRED
+                  4=PPM
+                  9=REG
+
+   Current CLIA Lab Clsfctn CD                       2    495   496  CHAR
+     Description: Current Lab Classification
+     SAS Name:    CURRENT_CLIA_LAB_CLSFCTN_CD
+     COBOL Name:  CURRENT-CLIA-LAB-CLSFCTN-CD
+     VALUES:      00=CLIA LABORATORY
+                  05=CLIA EXEMPT LABORATORY
+                  10=CLIA VA LABORATORY
+
+   CLIA Lab Classification CD 1                      2    497   498  CHAR
+     Description: Laboratory Classification 1
+     SAS Name:    CLIA_LAB_CLASSIFICATION_CD_1
+     COBOL Name:  CLIA-LAB-CLASSIFICATION-CD-1
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 28
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+     VALUES:      00=CLIA LABORATORY
+                  05=CLIA EXEMPT LABORATORY
+                  10=CLIA VA LABORATORY
+
+   CLIA Lab Classification CD 10                     2    499   500  CHAR
+     Description: Laboratory Classification 10
+     SAS Name:    CLIA_LAB_CLASSIFICATION_CD_10
+     COBOL Name:  CLIA-LAB-CLASSIFICATION-CD-10
+     VALUES:      00=CLIA LABORATORY
+                  05=CLIA EXEMPT LABORATORY
+                  10=CLIA VA LABORATORY
+
+   CLIA Lab Classification CD 2                      2    501   502  CHAR
+     Description: Laboratory Classification 2
+     SAS Name:    CLIA_LAB_CLASSIFICATION_CD_2
+     COBOL Name:  CLIA-LAB-CLASSIFICATION-CD-2
+     VALUES:      00=CLIA LABORATORY
+                  05=CLIA EXEMPT LABORATORY
+                  10=CLIA VA LABORATORY
+
+   CLIA Lab Classification CD 3                      2    503   504  CHAR
+     Description: Laboratory Classification 3
+     SAS Name:    CLIA_LAB_CLASSIFICATION_CD_3
+     COBOL Name:  CLIA-LAB-CLASSIFICATION-CD-3
+     VALUES:      00=CLIA LABORATORY
+                  05=CLIA EXEMPT LABORATORY
+                  10=CLIA VA LABORATORY
+
+   CLIA Lab Classification CD 4                      2    505   506  CHAR
+     Description: Laboratory Classification 4
+     SAS Name:    CLIA_LAB_CLASSIFICATION_CD_4
+     COBOL Name:  CLIA-LAB-CLASSIFICATION-CD-4
+     VALUES:      00=CLIA LABORATORY
+                  05=CLIA EXEMPT LABORATORY
+                  10=CLIA VA LABORATORY
+
+   CLIA Lab Classification CD 5                      2    507   508  CHAR
+     Description: Laboratory Classification 5
+     SAS Name:    CLIA_LAB_CLASSIFICATION_CD_5
+     COBOL Name:  CLIA-LAB-CLASSIFICATION-CD-5
+     VALUES:      00=CLIA LABORATORY
+                  05=CLIA EXEMPT LABORATORY
+                  10=CLIA VA LABORATORY
+
+   CLIA Lab Classification CD 6                      2    509   510  CHAR
+     Description: Laboratory Classification 6
+     SAS Name:    CLIA_LAB_CLASSIFICATION_CD_6
+     COBOL Name:  CLIA-LAB-CLASSIFICATION-CD-6
+     VALUES:      00=CLIA LABORATORY
+                  05=CLIA EXEMPT LABORATORY
+                  10=CLIA VA LABORATORY
+
+   CLIA Lab Classification CD 7                      2    511   512  CHAR
+     Description: Laboratory Classification 7
+     SAS Name:    CLIA_LAB_CLASSIFICATION_CD_7
+     COBOL Name:  CLIA-LAB-CLASSIFICATION-CD-7
+     VALUES:      00=CLIA LABORATORY
+                  05=CLIA EXEMPT LABORATORY
+                  10=CLIA VA LABORATORY
+
+   CLIA Lab Classification CD 8                      2    513   514  CHAR
+     Description: Laboratory Classification 8
+     SAS Name:    CLIA_LAB_CLASSIFICATION_CD_8
+     COBOL Name:  CLIA-LAB-CLASSIFICATION-CD-8
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 29
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+     VALUES:      00=CLIA LABORATORY
+                  05=CLIA EXEMPT LABORATORY
+                  10=CLIA VA LABORATORY
+
+   CLIA Lab Classification CD 9                      2    515   516  CHAR
+     Description: Laboratory Classification 9
+     SAS Name:    CLIA_LAB_CLASSIFICATION_CD_9
+     COBOL Name:  CLIA-LAB-CLASSIFICATION-CD-9
+     VALUES:      00=CLIA LABORATORY
+                  05=CLIA EXEMPT LABORATORY
+                  10=CLIA VA LABORATORY
+
+   CLIA Medicare Number                              12   517   528  VARCHAR2
+     Description: Contains medicare numbers from prior to CLIA88.  Optional
+                  field.
+     SAS Name:    CLIA_MDCR_NUM
+     COBOL Name:  CLIA-MDCR-NUM
+
+   CLIA Termination Code                             2    529   530  VARCHAR2
+     Description: Identifies a laboratory's active or terminated status.
+                  If terminated, identifies the reason.
+     SAS Name:    CLIA_TRMNTN_CD
+     COBOL Name:  CLIA-TRMNTN-CD
+     VALUES:      00=ACTIVE PROVIDER
+                  01=VOLUNTARY-MERGER, CLOSURE
+                  02=VOLUNTARY-DISSATISFACTION WITH REIMBURSEMENT
+                  03=VOLUNTARY-RISK OF INVOLUNTARY TERMINATION
+                  04=VOLUNTARY-OTHER REASON FOR WITHDRAWAL
+                  05=INVOLUNTARY-FAILURE TO MEET HEALTH/SAFETY REQ
+                  06=INVOLUNTARY-FAILURE TO MEET AGREEMENT
+                  07=OTHER-PROVIDER STATUS CHANGE
+                  08=NONPAYMENT OF FEES
+                  09=REV/UNSUCCESSFUL PARTICIPATION IN PT
+                  10=REV/OTHER REASON
+                  11=INCOMPLETE CLIA APPLICATION INFORMATION
+                  12=NO LONGER PERFORMING TESTS
+                  13=MULTIPLE TO SINGLE SITE CERTIFICATE
+                  14=SHARED LABORATORY
+                  15=FAILURE TO RENEW WAIVER PPM CERTIFICATE
+                  16=DUPLICATE CLIA NUMBER
+                  17=MAIL RETURNED NO FORWARD ADDRESS CERT ENDED
+                  20=NOTIFICATION BANKRUPTCY
+                  33=ACCREDITATION NOT CONFIRMED
+                  80=AWAITING STATE APPROVAL
+                  99=OIG ACTION - DO NOT ACTIVATE
+
+   CMS-116 Accreditation Schedule Code               1    531   531  VARCHAR2
+     Description: Indicates the lab's accreditation schedule code
+                  calculated by the CLIA system, based on the information
+                  in the most recent CMS-116 application form.  Applies
+                  only to labs with a certificate of accreditation.
+     SAS Name:    ACRDTN_SCHDL_CD
+     COBOL Name:  ACRDTN-SCHDL-CD
+     VALUES:      A=SPEC COUNT < 4  (2,001 TO 10,000 TOT. VOL.)
+                  B=SPEC COUNT > 3  (2,001 T0 10,000 TOT. VOL.)
+                  C=SPEC COUNT < 4  (10,001 TO 25,000 TOT. VOL.)
+                  D=SPEC COUNT > 3  (10,001 TO 25,000 TOT. VOL.)
+                  E=SPEC COUNT > 0 (25,001 TO 50,000 TOT. VOL.)
+                  F=SPEC COUNT > 0 (50,001 TO 75,000 TOT. VOL.)
+                  G=SPEC COUNT > 0 (75,001 TO 100,000 TOT. VOL.)
+                  H=SPEC COUNT > 0 (100,001 TO 500,000 TOT. VOL.)
+                  I=SPEC COUNT > 0 (500,001 TO 1,000,000 TOT VOL)
+                  J=SPEC COUNT > 0 (1,000,001 OR MORE TOT. VOL.)
+                  V=TOTAL VOLUME: 1 TO 2,000
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 30
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+
+   CMS-116 Accredited Annual Test Volume             13   532   544  NUMBER
+     Description: Sum for all specialties as reported on the most recent
+                  CMS-116 application form.  Applies only to labs with a
+                  certificate of accreditation.
+     SAS Name:    FORM_116_ACRDTD_TEST_VOL_CNT
+     COBOL Name:  FORM-116-ACRDTD-TEST-VOL-CNT
+
+   CMS-116 Annual Test Volume                        13   545   557  NUMBER
+     Description: Sum for all specialties as reported on the most recent
+                  CMS-116 application form.  Applies only to labs with a
+                  certificate of compliance.
+     SAS Name:    FORM_116_TEST_VOL_CNT
+     COBOL Name:  FORM-116-TEST-VOL-CNT
+
+   Director Affiliated Lab Count                     3    558   560  NUMBER
+     Description: Number of laboratories with which the lab's director is
+                  affiliated.
+     SAS Name:    DRCTLY_AFLTD_LAB_CNT
+     COBOL Name:  DRCTLY-AFLTD-LAB-CNT
+
+   Fax Phone Number                                  10   561   570  VARCHAR2
+     Description: 10-digit fax phone number of the primary contact or the
+                  operator of the provider.
+     SAS Name:    FAX_PHNE_NUM
+     COBOL Name:  FAX-PHNE-NUM
+
+   Fiscal Year End Date (MMDD)                       4    571   574  VARCHAR2
+     Description: End date, consisting of the month and day, of the
+                  provider's fiscal year.
+     SAS Name:    FY_END_MO_DAY_CD
+     COBOL Name:  FY-END-MO-DAY-CD
+
+   Multiple Site Certificate Indicator               1    575   575  VARCHAR2
+     Description: Indicates if a lab has applied for a single site CLIA
+                  certificate to cover multiple testing locations.
+     SAS Name:    MLT_SITE_EXCPTN_SW
+     COBOL Name:  MLT-SITE-EXCPTN-SW
+
+   Multiple Site Exception: Hospital Campus Indicator 1    576   576  VARCHAR2
+     Description: Indicates if the single site CLIA certificate is for a
+                  hospital with several labs on a single hospital campus
+                  and under common direction.
+     SAS Name:    HOSP_LAB_EXCPTN_SW
+     COBOL Name:  HOSP-LAB-EXCPTN-SW
+
+   Multiple Site Exception: Public Health Indicator  1    577   577  VARCHAR2
+     Description: Indicates if the single site CLIA certificate is for
+                  multiple sites with non-profit, federal, state or local
+                  government status and engaged in limited public health
+                  testing.
+     SAS Name:    NON_PRFT_EXCPTN_SW
+     COBOL Name:  NON-PRFT-EXCPTN-SW
+
+   Multiple Site Exception: Temporary Testing Site   1    578   578  VARCHAR2
+   Indicator
+     Description: Indicates if the single site CLIA certificate is for a
+                  lab with multiple temporary testing sites.
+     SAS Name:    LAB_TEMP_TSTG_SITE_SW
+     COBOL Name:  LAB-TEMP-TSTG-SITE-SW
+
+   Multiple Site Lab Count                           4    579   582  NUMBER
+     Description: Total number of lab sites for which a lab has applied for
+                  a single certificate for multiple sites.
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 31
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+     SAS Name:    LAB_SITE_CNT
+     COBOL Name:  LAB-SITE-CNT
+
+   PPM Test Volume Count                             13   583   595  NUMBER
+     Description: Estimated total annual Provider Performed Microscopy
+                  tests performed by the lab.
+     SAS Name:    PPMP_TEST_VOL_CNT
+     COBOL Name:  PPMP-TEST-VOL-CNT
+
+   Provider Name 2nd Line                            50   596   645  VARCHAR2
+     Description: Second line of a laboratory name.
+     SAS Name:    ADDTNL_FAC_NAME
+     COBOL Name:  ADDTNL-FAC-NAME
+
+   Related Provider Number                           10   646   655  CHAR
+     Description: Related provider number
+     SAS Name:    RELATED_PROVIDER_NUMBER
+     COBOL Name:  RELATED-PROVIDER-NUMBER
+
+   Shared Lab Indicator                              1    656   656  VARCHAR2
+     Description: Applies to physician office labs when two or more
+                  physicians collectively pool resources to fund a lab's
+                  operation.
+     SAS Name:    SHR_LAB_SW
+     COBOL Name:  SHR-LAB-SW
+
+   Shared Lab Xref Number                            10   657   666  CHAR
+     Description: Shared lab xref number
+     SAS Name:    SHARED_LAB_XREF_NUMBER
+     COBOL Name:  SHARED-LAB-XREF-NUMBER
+
+   Survey Compliance Certificate Schedule Code       1    667   667  VARCHAR2
+     Description: Certificate Compliance schedule code based on the
+                  information gathered at survey.
+     SAS Name:    FORM_1557_CRTFCT_SCHDL_CD
+     COBOL Name:  FORM-1557-CRTFCT-SCHDL-CD
+     VALUES:      A=SPEC COUNT < 4  (2,001 TO 10,000 TOT. VOL.)
+                  B=SPEC COUNT > 3  (2,001 T0 10,000 TOT. VOL.)
+                  C=SPEC COUNT < 4  (10,001 TO 25,000 TOT. VOL.)
+                  D=SPEC COUNT > 3  (10,001 TO 25,000 TOT. VOL.)
+                  E=SPEC COUNT > 0 (25,001 TO 50,000 TOT. VOL.)
+                  F=SPEC COUNT > 0 (50,001 TO 75,000 TOT. VOL.)
+                  G=SPEC COUNT > 0 (75,001 TO 100,000 TOT. VOL.)
+                  H=SPEC COUNT > 0 (100,001 TO 500,000 TOT. VOL.)
+                  I=SPEC COUNT > 0 (500,001 TO 1,000,000 TOT VOL)
+                  J=SPEC COUNT > 0 (1,000,001 OR MORE TOT. VOL.)
+                  V=TOTAL VOLUME: 1 TO 2,000
+
+   Survey Compliance Schedule Code                   1    668   668  VARCHAR2
+     Description: Compliance schedule code based on the information
+                  gathered at survey.
+     SAS Name:    FORM_1557_CMPLNC_SCHDL_CD
+     COBOL Name:  FORM-1557-CMPLNC-SCHDL-CD
+     VALUES:      A=SPEC COUNT < 4  (2,001 TO 10,000 TOT. VOL.)
+                  B=SPEC COUNT > 3  (2,001 T0 10,000 TOT. VOL.)
+                  C=SPEC COUNT < 4  (10,001 TO 25,000 TOT. VOL.)
+                  D=SPEC COUNT > 3  (10,001 TO 25,000 TOT. VOL.)
+                  E=SPEC COUNT > 0 (25,001 TO 50,000 TOT. VOL.)
+                  F=SPEC COUNT > 0 (50,001 TO 75,000 TOT. VOL.)
+                  G=SPEC COUNT > 0 (75,001 TO 100,000 TOT. VOL.)
+                  H=SPEC COUNT > 0 (100,001 TO 500,000 TOT. VOL.)
+                  I=SPEC COUNT > 0 (500,001 TO 1,000,000 TOT VOL)
+                  J=SPEC COUNT > 0 (1,000,001 OR MORE TOT. VOL.)
+                  V=TOTAL VOLUME: 1 TO 2,000
+
+
+ DATE: 10/01/2018              POS RECORD LAYOUT                      PAGE: 32
+              CLIA Laboratory, CATEGORY = "22" (SEE POSITIONS 3-4)
+
+   SHORT DESCRIPTION                                LEN  START END    TYPE
+
+
+   Survey Test Volume Count                          13   669   681  NUMBER
+     Description: Sum of tests performed annually in a laboratory, as
+                  verified at the time of the state survey.
+     SAS Name:    FORM_1557_TEST_VOL_CNT
+     COBOL Name:  FORM-1557-TEST-VOL-CNT
+
+   Waived Test Volume Count                          13   682   694  NUMBER
+     Description: Estimated total annual waived tests performed by the lab.
+     SAS Name:    WVD_TEST_VOL_CNT
+     COBOL Name:  WVD-TEST-VOL-CNT
+
